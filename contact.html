@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="想＆へのお問い合わせ。Webサイト制作、公開後の運用・改善、デジタル活用など、まだ具体的に決まっていない段階からご相談いただけます。" />
+  <title>お問い合わせ | 想＆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+Antique:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./lower.css" />
+  <script src="./lower.js" defer></script>
+</head>
+<body class="lower-page lower-page--cobalt contact-page">
+  <header class="site-header site-header--lower" aria-label="サイトヘッダー">
+    <a class="brand" href="./index.html" aria-label="想＆ トップへ">想＆</a>
+    <nav class="global-nav" aria-label="メインナビゲーション">
+      <a href="./index.html#service">SERVICE</a>
+      <a href="./works.html">WORKS</a>
+      <a href="./index.html#about">ABOUT</a>
+      <a href="./contact.html" aria-current="page">CONTACT</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="page-thread" aria-hidden="true"><span class="page-thread__base"></span><span class="page-thread__progress"></span></div>
+
+  <main>
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-hero__ghost" aria-hidden="true">CONTACT</div>
+      <div class="contact-hero__halo contact-hero__halo--a" aria-hidden="true"></div>
+      <div class="contact-hero__halo contact-hero__halo--b" aria-hidden="true"></div>
+      <div class="contact-hero__inner">
+        <p class="contact-hero__eyebrow reveal-item">CONTACT</p>
+        <h1 id="contact-title" class="reveal-item">まだ決まっていなくても、<br />ご相談ください。</h1>
+        <p class="contact-hero__description reveal-item">Webサイトを作りたい、今のサイトを改善したい、デジタルまわりを整理したい。<br class="desktop-only" />方法が決まっていない段階でも、状況を伺いながら一緒に整理します。</p>
+      </div>
+    </section>
+
+    <section class="contact-canvas" aria-label="お問い合わせフォーム">
+      <div class="contact-shell">
+        <aside class="contact-guide reveal-item">
+          <p class="contact-guide__label">BEFORE YOU SEND</p>
+          <h2>分かる範囲だけで<br />大丈夫です。</h2>
+          <p>ご相談内容が固まっていなくても問題ありません。現在の状況や「こうしたい」ということを、そのままお聞かせください。</p>
+          <div class="contact-guide__topics" aria-label="ご相談例">
+            <span>Webサイトを新しく作りたい</span>
+            <span>今のサイトを改善したい</span>
+            <span>公開後の運用を相談したい</span>
+            <span>デジタル活用を整理したい</span>
+          </div>
+          <div class="contact-guide__flow">
+            <div><small>01</small><b>ご相談</b></div><i></i>
+            <div><small>02</small><b>内容整理</b></div><i></i>
+            <div><small>03</small><b>ご提案</b></div>
+          </div>
+        </aside>
+
+        <div class="contact-form-panel reveal-item">
+          <form class="contact-form" action="#" method="post">
+            <fieldset class="contact-fieldset">
+              <legend>ご相談内容 <small>複数選択可</small></legend>
+              <div class="contact-choice-grid">
+                <label class="contact-choice"><input type="checkbox" name="topic[]" value="web-production"><span>Webサイト制作</span></label>
+                <label class="contact-choice"><input type="checkbox" name="topic[]" value="web-operation"><span>Web運用・改善</span></label>
+                <label class="contact-choice"><input type="checkbox" name="topic[]" value="digital"><span>デジタル・ITの相談</span></label>
+                <label class="contact-choice"><input type="checkbox" name="topic[]" value="other"><span>その他・まだ未定</span></label>
+              </div>
+            </fieldset>
+
+            <div class="contact-form__grid">
+              <label class="contact-field contact-field--full">
+                <span>会社名・屋号 <small>任意</small></span>
+                <input type="text" name="company" autocomplete="organization" placeholder="株式会社〇〇" />
+              </label>
+              <label class="contact-field">
+                <span>お名前 <b>必須</b></span>
+                <input type="text" name="name" autocomplete="name" required placeholder="山田 太郎" />
+              </label>
+              <label class="contact-field">
+                <span>メールアドレス <b>必須</b></span>
+                <input type="email" name="email" autocomplete="email" required placeholder="example@company.jp" />
+              </label>
+              <label class="contact-field contact-field--full">
+                <span>ご相談内容 <b>必須</b></span>
+                <textarea name="message" rows="7" required placeholder="現在のお悩みや、やりたいことなどを分かる範囲でお書きください。"></textarea>
+              </label>
+            </div>
+
+            <div class="contact-form__bottom">
+              <p>ご入力いただいた情報は、お問い合わせへの対応にのみ使用します。</p>
+              <button type="submit">送信する <span>→</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--contact">
+    <div class="footer-brand">想＆ <span>想いを、デジタルの力に。</span></div>
+    <nav aria-label="フッターナビゲーション"><a href="./index.html">HOME</a><a href="./index.html#service">SERVICE</a><a href="./works.html">WORKS</a><a href="./insights.html">INSIGHTS</a><a href="./index.html#about">ABOUT</a><a href="./contact.html">CONTACT</a></nav>
+  </footer>
+</body>
+</html>
