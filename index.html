@@ -15,16 +15,14 @@
 <body>
   <header class="site-header" aria-label="サイトヘッダー">
     <a class="brand" href="#top" aria-label="想＆ トップへ">想＆</a>
-    <nav class="global-nav" aria-label="メインナビゲーション">
+    <nav class="global-nav" id="global-menu" aria-label="メインナビゲーション">
       <a href="#service">SERVICE</a>
-      <a href="#works">WORKS</a>
+      <a href="./works.html">WORKS</a>
       <a href="./insights.html">INSIGHTS</a>
       <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
+      <a href="./contact.html">CONTACT</a>
     </nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-menu"><span></span><span></span></button>
   </header>
 
   <div class="page-thread" aria-hidden="true">
@@ -63,7 +61,8 @@
             <div>
               <p class="eyebrow">01 / PHILOSOPHY</p>
               <h2 id="philosophy-title" class="display-title display-title--light">
-                私たちは、<br />Webサイトを作ることから<br />始めません。
+                <span class="philosophy-line">私たちは、Webサイトを</span>
+                <span class="philosophy-line">作ることから始めません。</span>
               </h2>
             </div>
             <div class="philosophy-copy">

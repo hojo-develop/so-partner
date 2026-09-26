@@ -2,6 +2,7 @@
   const root = document.documentElement;
   const heroStage = document.querySelector('.hero-stage');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileHero = window.matchMedia('(max-width: 980px)');
 
   let ticking = false;
 
@@ -55,18 +56,21 @@
     // obvious "animation start" point.
     const smoothstep = (t) => t * t * (3 - 2 * t);
 
-    const airStart = 0.08;
-    const airEnd = 0.70;
+    // Mobile responds from the first scroll input to avoid a dead zone before
+    // the BLUE LAYERS transition begins.
+    const isMobile = mobileHero.matches;
+    const airStart = isMobile ? 0 : 0.08;
+    const airEnd = isMobile ? 0.66 : 0.70;
     const airProgress = clamp((progress - airStart) / (airEnd - airStart));
     const airEase = smoothstep(airProgress);
 
-    const mainStart = 0.15;
-    const mainEnd = 0.82;
+    const mainStart = isMobile ? 0.055 : 0.15;
+    const mainEnd = isMobile ? 0.78 : 0.82;
     const mainProgress = clamp((progress - mainStart) / (mainEnd - mainStart));
     const mainEase = smoothstep(mainProgress);
 
-    const deepStart = 0.27;
-    const deepEnd = 0.94;
+    const deepStart = isMobile ? 0.16 : 0.27;
+    const deepEnd = isMobile ? 0.93 : 0.94;
     const deepProgress = clamp((progress - deepStart) / (deepEnd - deepStart));
     const deepEase = smoothstep(deepProgress);
 
@@ -74,8 +78,8 @@
     const heroContentOpacity = 1;
 
     // PHILOSOPHY appears only after most of the HERO has become cobalt.
-    const philosophyStart = 0.62;
-    const philosophyEnd = 0.89;
+    const philosophyStart = isMobile ? 0.55 : 0.62;
+    const philosophyEnd = isMobile ? 0.88 : 0.89;
     const philosophyProgress = clamp((progress - philosophyStart) / (philosophyEnd - philosophyStart));
     const philosophyEase = 1 - Math.pow(1 - philosophyProgress, 2.3);
 
@@ -131,8 +135,14 @@
   updatePageThread();
 
   const menuButton = document.querySelector('.menu-button');
-  menuButton?.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-  });
+  const globalNav = document.querySelector('.global-nav');
+  const setMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    menuButton?.setAttribute('aria-expanded', String(open));
+    menuButton?.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  };
+  menuButton?.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  globalNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+  mobileHero.addEventListener?.('change', (event) => { if (!event.matches) setMenu(false); });
 })();

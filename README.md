@@ -42,3 +42,10 @@ Works index is designed for browsing/filtering. Works detail is story-led and SE
 - `noindex` (draft / special cases)
 
 When CMS integration is added, generate `BlogPosting` JSON-LD from the same fields and keep `dateModified` synchronized with visible update dates. The source/reference block is intentionally part of the article template for topics that depend on external or changing facts.
+
+
+## 2026-09-26 update
+- Added `insight-web-principles.html`: Webサイト制作で大切にしている5つのこと。
+- Refined the shared header/navigation and implemented a full-screen cobalt mobile hamburger menu.
+- Adjusted the mobile TOP HERO scroll timing so BLUE LAYERS react from the first scroll input.
+- Corrected the PC PHILOSOPHY heading line breaks.

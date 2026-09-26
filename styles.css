@@ -360,3 +360,169 @@ body.hero-is-cobalt .menu-button span { background: #fff; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .hero-mist { transform: none !important; }
 }
+
+
+/* ==========================================================
+   Shared navigation / header refinement
+   ========================================================== */
+.site-header{
+  height:72px;
+  gap:28px;
+  padding-inline:var(--page-x);
+}
+.brand{
+  position:relative;
+  z-index:82;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  line-height:1;
+}
+.brand::before{
+  content:"";
+  width:3px;
+  height:18px;
+  border-radius:99px;
+  background:linear-gradient(180deg,#0b45f4,#73aeff);
+  box-shadow:0 0 18px rgba(30,101,255,.18);
+}
+.global-nav{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  padding:4px;
+  border:1px solid rgba(18,45,89,.09);
+  border-radius:999px;
+  background:rgba(255,255,255,.68);
+  box-shadow:0 8px 30px rgba(15,34,68,.05);
+  backdrop-filter:blur(18px) saturate(1.15);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+}
+.global-nav a{
+  padding:9px 12px;
+  border-radius:999px;
+  opacity:.66;
+  transition:opacity .18s ease,background .18s ease,color .18s ease;
+}
+.global-nav a:hover,.global-nav a[aria-current="page"]{
+  opacity:1;
+  background:rgba(11,69,244,.07);
+}
+body.hero-is-cobalt .global-nav{
+  border-color:rgba(255,255,255,.14);
+  background:rgba(5,25,101,.20);
+  box-shadow:none;
+}
+body.hero-is-cobalt .global-nav a:hover,
+body.hero-is-cobalt .global-nav a[aria-current="page"]{background:rgba(255,255,255,.10)}
+body.hero-is-cobalt .brand::before{background:linear-gradient(180deg,#fff,#86b9ff)}
+.menu-button{
+  position:relative;
+  z-index:83;
+  flex:0 0 40px;
+  width:40px;
+  height:40px;
+  margin-left:auto;
+  padding:0;
+  border:1px solid rgba(18,45,89,.10);
+  border-radius:50%;
+  background:rgba(255,255,255,.66);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.menu-button span{
+  position:absolute;
+  left:11px;
+  width:17px;
+  height:1px;
+  margin:0;
+  background:currentColor;
+  transition:transform .32s cubic-bezier(.22,1,.36,1),top .32s cubic-bezier(.22,1,.36,1),opacity .2s ease;
+}
+.menu-button span:first-child{top:15px}
+.menu-button span:last-child{top:23px}
+.philosophy-line{display:block;white-space:nowrap}
+
+@media (max-width:980px){
+  body.menu-open{overflow:hidden}
+  .site-header{height:68px;padding-inline:20px}
+  .brand{font-size:21px}
+  .brand::before{height:16px}
+  .global-nav{
+    position:fixed;
+    inset:0;
+    z-index:80;
+    margin:0;
+    padding:112px 28px 54px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    gap:0;
+    overflow:hidden;
+    border:0;
+    border-radius:0;
+    background:linear-gradient(135deg,#0b45f4 0%,#093edc 48%,#072b9e 100%);
+    color:#fff;
+    box-shadow:none;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:opacity .25s ease,visibility .25s ease,transform .45s cubic-bezier(.22,1,.36,1);
+  }
+  .global-nav::before,
+  .global-nav::after{
+    content:"";
+    position:absolute;
+    pointer-events:none;
+  }
+  .global-nav::before{
+    width:90vw;height:90vw;right:-38vw;top:-20vw;border-radius:50%;
+    background:radial-gradient(circle,rgba(118,179,255,.34),rgba(118,179,255,0) 68%);
+  }
+  .global-nav::after{
+    left:28px;right:28px;bottom:38px;height:1px;
+    background:linear-gradient(90deg,rgba(255,255,255,.6),rgba(255,255,255,.05));
+  }
+  .global-nav a{
+    position:relative;
+    z-index:1;
+    width:100%;
+    padding:17px 0;
+    border-bottom:1px solid rgba(255,255,255,.14);
+    border-radius:0;
+    color:#fff;
+    font-family:"Zen Kaku Gothic Antique",sans-serif;
+    font-size:clamp(24px,7.5vw,34px);
+    line-height:1.12;
+    letter-spacing:-.035em;
+    opacity:.72;
+    transform:translateY(10px);
+    transition:opacity .2s ease,transform .42s cubic-bezier(.22,1,.36,1),background .18s ease;
+  }
+  .global-nav a:hover,.global-nav a[aria-current="page"]{background:transparent;opacity:1}
+  .global-nav a:nth-child(2){transition-delay:.025s}
+  .global-nav a:nth-child(3){transition-delay:.05s}
+  .global-nav a:nth-child(4){transition-delay:.075s}
+  .global-nav a:nth-child(5){transition-delay:.10s}
+  body.menu-open .global-nav{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  body.menu-open .global-nav a{transform:none}
+  .menu-button{display:block;margin-left:auto}
+  body.menu-open .menu-button{
+    border-color:rgba(255,255,255,.18);
+    background:rgba(3,27,117,.20);
+    color:#fff;
+  }
+  body.menu-open .menu-button span:first-child{top:19px;transform:rotate(45deg)}
+  body.menu-open .menu-button span:last-child{top:19px;transform:rotate(-45deg)}
+  body.menu-open .brand{color:#fff}
+  body.menu-open .brand::before{background:linear-gradient(180deg,#fff,#8fc0ff)}
+  .philosophy-line{white-space:normal}
+  .hero-stage{height:150svh}
+}
+
+@media (max-width:980px){
+  .hero{height:100svh;min-height:100svh}
+  body.menu-open .site-header .menu-button span{background:#fff}
+}

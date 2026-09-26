@@ -34,8 +34,14 @@
 <body class="lower-page article-page">
   <header class="site-header insights-header" aria-label="サイトヘッダー">
     <a class="brand" href="./index.html" aria-label="想＆ トップへ">想＆</a>
-    <nav class="global-nav" aria-label="メインナビゲーション"><a href="./index.html#service">SERVICE</a><a href="./works.html">WORKS</a><a href="./insights.html" aria-current="page">INSIGHTS</a><a href="./index.html#about">ABOUT</a><a href="./contact.html">CONTACT</a></nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+    <nav class="global-nav" id="global-menu" aria-label="メインナビゲーション">
+      <a href="./index.html#service">SERVICE</a>
+      <a href="./works.html">WORKS</a>
+      <a href="./insights.html" aria-current="page">INSIGHTS</a>
+      <a href="./index.html#about">ABOUT</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-menu"><span></span><span></span></button>
   </header>
   <div class="page-thread page-thread--dark" aria-hidden="true"><span class="page-thread__base"></span><span class="page-thread__progress"></span></div>
 
@@ -142,9 +148,9 @@
         <div class="lower-inner">
           <div class="article-related__head"><div><p class="lower-kicker lower-kicker--dark">RELATED INSIGHTS</p><h2>次に考えたいこと。</h2></div><a href="./insights.html">ALL INSIGHTS →</a></div>
           <div class="article-related__grid">
+            <a href="./insight-web-principles.html"><span>WEB / PHILOSOPHY</span><h3>Webサイト制作で、大切にしている5つのこと。</h3><small>READ →</small></a>
             <article><span>AI / WEB</span><h3>「検索する」から「相談する」へ。</h3><small>PLANNED</small></article>
             <article><span>RECRUITING</span><h3>本当に欲しいのは、最初からコードを書ける人ですか？</h3><small>PLANNED</small></article>
-            <article><span>TRAINING</span><h3>新人教育の仕組みを整える中で学んだこと。</h3><small>PLANNED</small></article>
           </div>
         </div>
       </section>

@@ -17,14 +17,14 @@
 <body class="lower-page insights-page">
   <header class="site-header insights-header" aria-label="サイトヘッダー">
     <a class="brand" href="./index.html" aria-label="想＆ トップへ">想＆</a>
-    <nav class="global-nav" aria-label="メインナビゲーション">
+    <nav class="global-nav" id="global-menu" aria-label="メインナビゲーション">
       <a href="./index.html#service">SERVICE</a>
       <a href="./works.html">WORKS</a>
       <a href="./insights.html" aria-current="page">INSIGHTS</a>
       <a href="./index.html#about">ABOUT</a>
       <a href="./contact.html">CONTACT</a>
     </nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-menu"><span></span><span></span></button>
   </header>
 
   <div class="page-thread page-thread--dark" aria-hidden="true"><span class="page-thread__base"></span><span class="page-thread__progress"></span></div>
@@ -42,13 +42,21 @@
     <section class="insights-index" aria-label="記事一覧">
       <div class="lower-inner">
         <div class="insights-index__bar reveal-item">
-          <p>INSIGHTS / 01–04</p>
-          <div class="insights-filter" aria-label="カテゴリー"><span class="is-active">ALL</span><span>SEO / AI</span><span>WEB</span><span>RECRUITING</span><span>TRAINING</span></div>
+          <p>INSIGHTS / 01–05</p>
+          <div class="insights-filter" aria-label="カテゴリー"><span class="is-active">ALL</span><span>WEB</span><span>SEO / AI</span><span>RECRUITING</span><span>TRAINING</span></div>
         </div>
 
         <div class="insight-list">
-          <a class="insight-row insight-row--featured reveal-item" href="./insight-seo-aio.html">
+          <a class="insight-row insight-row--featured reveal-item" href="./insight-web-principles.html">
             <div class="insight-row__number">01</div>
+            <div class="insight-row__meta"><span>WEB / PHILOSOPHY</span><time datetime="2026-09-26">2026.09.26</time></div>
+            <div class="insight-row__main"><h2>Webサイト制作で、<br />大切にしている5つのこと。</h2><p>見た目だけでも、SEOだけでも終わらせない。伝わること、見つかること、そして公開後も扱いやすいことまで含めて考えます。</p></div>
+            <div class="insight-row__visual" aria-hidden="true"><div class="principles-visual"><i></i><i></i><i></i><i></i><i></i><b></b></div></div>
+            <span class="insight-row__arrow">READ →</span>
+          </a>
+
+          <a class="insight-row reveal-item" href="./insight-seo-aio.html">
+            <div class="insight-row__number">02</div>
             <div class="insight-row__meta"><span>SEO / AI SEARCH</span><time datetime="2026-09-26">2026.09.26</time></div>
             <div class="insight-row__main"><h2>SEO・AIOで、<br />今やるべきこと。</h2><p>生成AIによる検索体験が広がる中で、短期的な“攻略”ではなく、中長期で何を積み上げるべきかを整理します。</p></div>
             <div class="insight-row__visual" aria-hidden="true"><div class="signal-map"><i></i><i></i><i></i><b></b><span></span><span></span></div></div>
@@ -56,7 +64,7 @@
           </a>
 
           <article class="insight-row reveal-item">
-            <div class="insight-row__number">02</div>
+            <div class="insight-row__number">03</div>
             <div class="insight-row__meta"><span>AI / WEB</span><small>PLANNED</small></div>
             <div class="insight-row__main"><h2>「検索する」から<br />「相談する」へ。</h2><p>ブラウザ検索から生成AIへの相談へ。Webサイトの役割がどう変わるのかを、エンジニア目線で考えます。</p></div>
             <div class="insight-row__visual" aria-hidden="true"><div class="search-shift"><span>SEARCH</span><i></i><b>AI</b></div></div>
@@ -64,7 +72,7 @@
           </article>
 
           <article class="insight-row reveal-item">
-            <div class="insight-row__number">03</div>
+            <div class="insight-row__number">04</div>
             <div class="insight-row__meta"><span>RECRUITING</span><small>PLANNED</small></div>
             <div class="insight-row__main"><h2>本当に欲しいのは、<br />最初からコードを書ける人ですか？</h2><p>現在のスキルだけでなく、学び戦力になる素養まで含めて考える。IT人材採用に必要な投資を整理します。</p></div>
             <div class="insight-row__visual" aria-hidden="true"><div class="talent-visual"><i></i><i></i><i></i><b></b></div></div>
@@ -72,7 +80,7 @@
           </article>
 
           <article class="insight-row reveal-item">
-            <div class="insight-row__number">04</div>
+            <div class="insight-row__number">05</div>
             <div class="insight-row__meta"><span>TRAINING / ORGANIZATION</span><small>PLANNED</small></div>
             <div class="insight-row__main"><h2>新人教育の仕組みを<br />整える中で学んだこと。</h2><p>教える人の頑張りだけに依存しないために。質問、レビュー、任せ方まで含めて教育の仕組みを考えます。</p></div>
             <div class="insight-row__visual" aria-hidden="true"><div class="growth-visual"><span>ASK</span><i></i><span>TRY</span><i></i><span>REVIEW</span></div></div>

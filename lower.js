@@ -42,10 +42,17 @@
   }
 
   const menuButton = document.querySelector('.menu-button');
-  menuButton?.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-  });
+  const globalNav = document.querySelector('.global-nav');
+  const mobileMenu = window.matchMedia('(max-width: 980px)');
+  const setMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    menuButton?.setAttribute('aria-expanded', String(open));
+    menuButton?.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  };
+  menuButton?.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  globalNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+  mobileMenu.addEventListener?.('change', (event) => { if (!event.matches) setMenu(false); });
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });

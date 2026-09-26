@@ -406,3 +406,25 @@
 .site-footer--contact{background:#061f78;color:#fff}.site-footer--contact .footer-brand span,.site-footer--contact nav{color:rgba(255,255,255,.62)}
 @media(max-width:900px){.contact-shell{grid-template-columns:1fr}.contact-guide{min-height:auto}.contact-guide__flow{max-width:500px}.contact-hero__description br{display:none}}
 @media(max-width:760px){.contact-hero{min-height:54svh}.contact-hero__inner{min-height:54svh;padding:110px 24px 72px;text-align:left}.contact-hero__eyebrow{margin-bottom:20px}.contact-hero h1{font-size:39px;line-height:1.35}.contact-hero__description{margin-left:0;font-size:15px;line-height:1.9}.contact-hero__ghost{left:18px;transform:none;font-size:24vw}.contact-canvas{padding:0 18px 72px}.contact-guide,.contact-form-panel{border-radius:18px;padding:24px}.contact-guide__label{margin-bottom:34px}.contact-guide h2{font-size:28px}.contact-guide>p:not(.contact-guide__label){font-size:14px}.contact-guide__topics{margin-top:30px}.contact-guide__topics span{font-size:13px}.contact-guide__flow{margin-top:38px;gap:6px}.contact-guide__flow div{min-width:58px}.contact-guide__flow b{font-size:11px}.contact-choice-grid,.contact-form__grid{grid-template-columns:1fr}.contact-field--full{grid-column:auto}.contact-choice span{font-size:13px}.contact-field input,.contact-field textarea{font-size:16px}.contact-form__bottom{align-items:stretch;flex-direction:column}.contact-form__bottom button{width:100%}}
+
+
+/* Shared header refinement on cobalt lower pages */
+.site-header--lower{
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border-bottom:0;
+}
+.site-header--lower .global-nav{
+  border-color:rgba(255,255,255,.14);
+  background:rgba(4,25,100,.20);
+  box-shadow:none;
+}
+.site-header--lower .global-nav a:hover,
+.site-header--lower .global-nav a[aria-current="page"]{background:rgba(255,255,255,.10)}
+.site-header--lower .brand::before{background:linear-gradient(180deg,#fff,#87baff)}
+.site-header--lower .menu-button{color:#fff;border-color:rgba(255,255,255,.16);background:rgba(5,28,111,.18)}
+@media(max-width:980px){
+  .site-header--lower{height:68px}
+  .site-header--lower .global-nav{background:linear-gradient(135deg,#0b45f4 0%,#093edc 48%,#072b9e 100%)}
+}
